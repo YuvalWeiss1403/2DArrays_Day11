@@ -31,20 +31,13 @@ console.log(sumOfColumns(matrix_ex1));
 //Ex2
 //------------------------------------------------------------------------------------------------------------------
 function smallestInRow(matrix){
-    let minNumInRow = [];
-    for (let i = 0; i < matrix[0].length; i++) {
-        let min =0;
-        for (let j = 0; j < matrix[i].length; j++) {
-            min += matrix[i][0];
-            if (min > matrix[i][j]){
-                min = matrix[i][j];
-            }else{
-                continue;
-            }
-            minNumInRow.push(min);
-        }        
+
+    let minNumInRow =[];
+    for (let i = 0; i < matrix.length; i++) {
+        minNumInRow[i] =(Math.min(...matrix[i]));
     }
-    return minNumInRow;    
+    return minNumInRow;
+
 }
 const matrix_ex2 = [[1,2,3],[4,5,6],[7,8,9]];
 console.log(smallestInRow(matrix_ex2));
